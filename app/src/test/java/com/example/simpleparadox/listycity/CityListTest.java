@@ -32,11 +32,11 @@ class CityListTest {
     @Test
     void testDelete(){
         CityList cityList = mockCityList();
-        cityList.add(new City("Regina", "Saskatchewan"));
-
         City city = new City("Vancouver", "British Columbia");
-        cityList.delete(city);
+        cityList.add(city);
 
+
+        cityList.delete(city);
         assertEquals(false, cityList.hasCity(city));
         assertThrows(IllegalArgumentException.class, () -> {
             cityList.delete(city);
